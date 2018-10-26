@@ -46,15 +46,15 @@ module.exports = function(sequelize, DataTypes) {
         len: [2, 200]
       },
       isCustomer: {
-        type: DataTypes.Boolean,
+        type: DataTypes.BOOLEAN,
         defaultValue: false
       },
       isEmployee: {
-        type: DataTypes.Boolean,
+        type: DataTypes.BOOLEAN,
         defaultValue: true
       },
       isAdmin: {
-        type: DataTypes.Boolean,
+        type: DataTypes.BOOLEAN,
         defaultValue: false
       }
     });
