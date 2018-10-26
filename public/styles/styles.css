@@ -1,3 +1,90 @@
-.list-group-item {
-  line-height: 2.5;
+html,body, .container {
+  height: 100%;
+}
+
+body {
+  background-color: #ebeced;
+  color: #3e3e3b;
+  box-sizing: border-box;
+  text-align: center;
+}
+header {
+  background-color: #3e3e3b; 
+  color:#cbc5c1;
+  height: 15%;
+}
+div {
+  /* border-style: solid;
+  border-color: black;
+  border-width: 2px; */
+  background-color: #a2aab0;
+}
+
+button {
+  background-color: #4c586f;
+  color: #cbc5c1;
+}
+.container {
+  display:flex;
+  flex-direction: column;
+  background-color: #ebeced;
+
+}
+
+.menu {
+  flex-direction: row;
+  align-content: flex-start;
+  background-color: #ebeced;
+  height: 5%;
+}
+
+footer {
+  background-color: #3e3e3b; 
+  color:#cbc5c1;
+  height: 5%;
+}
+
+
+/* index */
+
+#about {
+  height: 30%;
+  background-color: #ebeced;
+}
+#logDisp {
+  height: 40%;
+}
+
+/* customer */
+
+#name {
+  height: 10%;
+  background-color: #ebeced;
+}
+#display {
+  height: 40%;
+}
+
+
+/* employee */
+
+.innerCont {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: #ebeced;
+  height: 75%;
+}
+.subs {
+  width: 30%;
+}
+
+/* admin */
+
+#records {
+  width: 20%;
+}
+
+#form {
+  width: 75%;
 }
