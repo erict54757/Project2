@@ -2,6 +2,7 @@
 var db = require("../models");
 var passport = require("../config/passport");
 var isAuthenticated = require("../config/middleware/isAuthenticated");
+var isAdmin = require("../config/middleware/isAdmin");
 
 module.exports = function(app) {
   app.post("/api/login", passport.authenticate("local"), function(req, res) {
@@ -11,7 +12,7 @@ module.exports = function(app) {
   });
 
   app.post("/api/signup", function(req, res) {
-    console.log(req.body)
+    console.log(req.body);
     db.User.create({
       email: req.body.email,
       password: req.body.password,
@@ -28,7 +29,8 @@ module.exports = function(app) {
         // res.status(422).json(err.errors[0].message);
       });
   });
-  app.post("/api/makeInventory", function(req, res) {
+  //Add inventory to list
+  app.post("/api/makeInventory", isAdmin, function(req, res) {
     db.Inventory.create({
       Inventory: req.body.Inventory
     })
@@ -41,14 +43,61 @@ module.exports = function(app) {
         // res.status(422).json(err.errors[0].message);
       });
   });
+  app.post("/api/addEmployee", isAdmin, function(req, res) {
+    db.User.create({
+      email: req.body.email,
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      phoneNumber: req.body.phoneNumber,
+      password: req.body.password,
+      reservations: null,
+      pastReservations: null,
+      comments: req.body.comments,
+      isCustomer: false,
+      isEmployee: true,
+      isAdmin: false
+    })
+      .then(function() {
+        res.redirect(307, "/admin");
+      })
+      .catch(function(err) {
+        console.log(err);
+        res.json(err);
+        // res.status(422).json(err.errors[0].message);
+      });
+  });
+  app.post("/api/addEmployee", isAdmin, function(req, res) {
+    db.User.create({
+      email: req.body.email,
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      phoneNumber: req.body.phoneNumber,
+      password: req.body.password,
+      reservations: null,
+      pastReservations: null,
+      comments: req.body.comments,
+      isCustomer: true,
+      isEmployee: false,
+      isAdmin: false
+    })
+      .then(function() {
+        res.redirect(307, "/admin");
+      })
+      .catch(function(err) {
+        console.log(err);
+        res.json(err);
+        // res.status(422).json(err.errors[0].message);
+      });
+  });
   app.put("/api/makeAppointment", isAuthenticated, function(req, res) {
+    console.log(req.body.reservations);
     db.User.update(
       {
         reservations: req.body.reservations
       },
       {
-        WHERE: {
-          User: req.body.user
+        where: {
+          id: req.body.id
         }
       }
     )
@@ -88,7 +137,7 @@ module.exports = function(app) {
   app.get("/api/customer-info", isAuthenticated, function(req, res) {
     if (!req.user) {
       // The user is not logged in, send back an empty object
-      res.json({ key: "eric" });
+      res.json({});
     } else {
       // Otherwise send back the user's email and id
       // Sending back a password, even a hashed password, isn't a good idea
