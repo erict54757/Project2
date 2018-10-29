@@ -1,5 +1,6 @@
-html,body, .container {
+html,body {
   height: 100%;
+  margin: 0;
 }
 
 body {
@@ -7,28 +8,27 @@ body {
   color: #3e3e3b;
   box-sizing: border-box;
   text-align: center;
+  display:flex;
+  flex-direction: column;
+  font-family: 'Crimson Text', Georgia, Times, serif;
+  font-size: 16px;
+  line-height: 25px;
 }
 header {
   background-color: #3e3e3b; 
   color:#cbc5c1;
   height: 15%;
+  font-family: 'Allerta', Helvetica, Arial, sans-serif;
+  font-size: 40px;
+  line-height: 45px;
 }
 div {
-  /* border-style: solid;
-  border-color: black;
-  border-width: 2px; */
   background-color: #a2aab0;
 }
 
 button {
   background-color: #4c586f;
   color: #cbc5c1;
-}
-.container {
-  display:flex;
-  flex-direction: column;
-  background-color: #ebeced;
-
 }
 
 .menu {
@@ -48,7 +48,7 @@ footer {
 /* index */
 
 #about {
-  height: 30%;
+  height: 40%;
   background-color: #ebeced;
 }
 #logDisp {
@@ -58,11 +58,11 @@ footer {
 /* customer */
 
 #name {
-  height: 10%;
+  height: 12%;
   background-color: #ebeced;
 }
 #display {
-  height: 40%;
+  height: 63%;
 }
 
 
@@ -73,18 +73,24 @@ footer {
   flex-direction: row;
   justify-content: space-around;
   background-color: #ebeced;
-  height: 75%;
+  height: 80%;
 }
 .subs {
   width: 30%;
 }
 
 /* admin */
-
+#innerCont {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: #ebeced;
+  height: 75%;
+}
 #records {
   width: 20%;
 }
 
 #form {
-  width: 75%;
+  width: 70%;
 }
