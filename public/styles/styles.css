@@ -25,11 +25,19 @@ header {
 }
 div {
   background-color: #a2aab0;
+  padding: 5px;
 }
 
 button {
   background-color: #4c586f;
   color: #cbc5c1;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 4px;
 }
 
 .menu {
@@ -37,6 +45,9 @@ button {
   align-content: flex-start;
   background-color: #ebeced;
   height: 5%;
+  border-bottom: #3e3e3b;
+  border-bottom-style: solid;
+  border-width: 2px;
 }
 
 footer {
@@ -62,10 +73,20 @@ footer {
   height: 12%;
   background-color: #ebeced;
 }
-#display {
-  height: 63%;
+.wrap {
+  height:63%;
+  background-color: #ebeced;
+  display:flex;
+  flex-direction: column;
+  
 }
-
+#display {
+  height: 95%;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
 
 /* employee */
 
@@ -88,8 +109,10 @@ footer {
   background-color: #ebeced;
   height: 75%;
 }
-#records {
-  /* width: 20%; */
+.records {
+  background-color: #ebeced;
+  height: 90%;
+  margin: 5px;
 }
 
 #form {
@@ -104,8 +127,10 @@ form {
   justify-content: space-around;
 }
 .fdiv {
-  /* width: 80%; */
-  border-style: solid;
-  border-color: black;
-  border-width:2px;
+ 
+}
+.appt, .purch{
+  background-color: #ebeced;
+  margin:5px;
+  height: 20%;
 }
