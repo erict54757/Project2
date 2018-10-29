@@ -37,7 +37,7 @@ module.exports = function(sequelize, DataTypes) {
     password: {
       type: DataTypes.STRING,
       allowNull: false
-    }
+    },
     // reservations: {
     //   type: DataTypes.TEXT
     // },
@@ -51,16 +51,19 @@ module.exports = function(sequelize, DataTypes) {
     // },
     // isCustomer: {
     //   type: DataTypes.BOOLEAN,
-    //   defaultValue: false
+    //   defaultValue: true
     // },
     // isEmployee: {
     //   type: DataTypes.BOOLEAN,
-    //   defaultValue: true
+    //   defaultValue: false
     // },
     // isAdmin: {
     //   type: DataTypes.BOOLEAN,
     //   defaultValue: false
-    // }
+    // },
+    inventory: {
+      type: DataTypes.text
+    }
   });
   // Creating a custom method for our User model. This will check if an unhashed password entered by the user can be compared to the hashed password stored in our database
   User.prototype.validPassword = function(password) {
