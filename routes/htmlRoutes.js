@@ -3,6 +3,8 @@ var path = require("path");
 
 // Requiring our custom middleware for checking if a user is logged in
 var isAuthenticated = require("../config/middleware/isAuthenticated");
+var isAdmin = require("../config/middleware/isAdmin");
+var isEmployee = require("../config/middleware/isEmployee");
 
 module.exports = function(app) {
   app.get("/login", function(req, res) {
@@ -10,7 +12,9 @@ module.exports = function(app) {
     if (req.user) {
       res.redirect("/customers");
     }
+
     res.sendFile(path.join(__dirname, "../public/login.html"));
+
   });
   app.get("/", function(req, res) {
     // If the user already has an account send them to the members page
@@ -25,17 +29,11 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/customer.html"));
   });
 
-  app.get("/admin", isAuthenticated, function(req, res) {
-    if (req.user.isAdmin) {
-      res.sendFile(path.join(__dirname, "../public/admin.html"));
-    }
-    res.redirect("/customers");
+  app.get("/admin", isAdmin, function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/admin.html"));
   });
 
-  app.get("/employee", isAuthenticated, function(req, res) {
-    if (req.user.isEmployee || req.user.isAdmin) {
-      res.sendFile(path.join(__dirname, "../public/employee.html"));
-    }
-    res.redirect("/customers");
+  app.get("/employee", isEmployee, function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/employee.html"));
   });
 };
