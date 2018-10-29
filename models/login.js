@@ -49,20 +49,20 @@ module.exports = function(sequelize, DataTypes) {
     //   type: DataTypes.TEXT,
     //   allowNull: false
     // },
-    // isCustomer: {
-    //   type: DataTypes.BOOLEAN,
-    //   defaultValue: true
-    // },
-    // isEmployee: {
-    //   type: DataTypes.BOOLEAN,
-    //   defaultValue: false
-    // },
-    // isAdmin: {
-    //   type: DataTypes.BOOLEAN,
-    //   defaultValue: false
-    // },
+    isCustomer: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
+    },
+    isEmployee: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
+    },
+    isAdmin: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: true
+    },
     inventory: {
-      type: DataTypes.text
+      type: DataTypes.TEXT
     }
   });
   // Creating a custom method for our User model. This will check if an unhashed password entered by the user can be compared to the hashed password stored in our database

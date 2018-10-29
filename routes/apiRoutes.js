@@ -85,32 +85,16 @@ module.exports = function(app) {
       });
     }
   });
-  app.get("/api/customer-info", function(req, res) {
-    if (!req.user) {
-      // The user is not logged in, send back an empty object
+  app.get("/api/employer-info", function(req, res) {
+    if (!req.employee) {
       res.json({});
     } else {
-      // Otherwise send back the user's email and id
-      // Sending back a password, even a hashed password, isn't a good idea
       res.json({
         email: req.user.email,
         id: req.user.id,
         firstName: req.user.firstName,
         lastName: req.user.lastName,
         phoneNumber: req.user.phoneNumber
-      });
-    }
-  });
-  app.get("/api/empolyer-info", function(req, res) {
-    if (!req.employee) {
-      res.json({});
-    } else {
-      res.json({
-        email: req.employee.email,
-        id: req.employee.id,
-        firstName: req.employee.firstName,
-        lastName: req.employee.lastName,
-        phoneNumber: req.employee.phoneNumber
       });
     }
   });
