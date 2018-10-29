@@ -13,42 +13,42 @@ module.exports = function(sequelize, DataTypes) {
         isEmail: true
       }
     },
-    // firstName: {
-    //   type: DataTypes.STRING,
-    //   allowNull: false,
-    //   is: ["^[a-z]+$", "i"],
-    //   len: [2, 20],
-    //   notEmpty: true
-    // },
-    // lastName: {
-    //   type: DataTypes.STRING,
-    //   allowNull: false,
-    //   is: ["^[a-z]+$", "i"],
-    //   len: [2, 20],
-    //   notEmpty: true
-    // },
-    // phoneNumber: {
-    //   type: DataTypes.INTEGER,
-    //   allowNull: false,
-    //   isNumeric: true,
-    //   notEmpty: true
-    // },
+    firstName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      is: ["^[a-z]+$", "i"],
+      len: [2, 20],
+      notEmpty: true
+    },
+    lastName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      is: ["^[a-z]+$", "i"],
+      len: [2, 20],
+      notEmpty: true
+    },
+    phoneNumber: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      isNumeric: true,
+      notEmpty: true
+    },
     // The password cannot be null
     password: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    // reservations: {
-    //   type: DataTypes.TEXT
-    // },
-    // pastReservations: {
-    //   type: DataTypes.TEXT,
-    //   allowNull: false
-    // },
-    // comments: {
-    //   type: DataTypes.TEXT,
-    //   allowNull: false
-    // },
+    reservations: {
+      type: DataTypes.TEXT
+    },
+    pastReservations: {
+      type: DataTypes.TEXT,
+      allowNull: true
+    },
+    comments: {
+      type: DataTypes.TEXT,
+      allowNull: true
+    },
     isCustomer: {
       type: DataTypes.BOOLEAN,
 
@@ -57,15 +57,12 @@ module.exports = function(sequelize, DataTypes) {
     isEmployee: {
       type: DataTypes.BOOLEAN,
       defaultValue: true
- },
-   
+    },
+
     isAdmin: {
       type: DataTypes.BOOLEAN,
       defaultValue: true
-
-
     }
-
   });
   // Creating a custom method for our User model. This will check if an unhashed password entered by the user can be compared to the hashed password stored in our database
   User.prototype.validPassword = function(password) {
