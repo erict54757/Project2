@@ -35,7 +35,7 @@ module.exports = function(app) {
   });
 
   app.get("/employee", isAuthenticated, function(req, res) {
-    if (req.user.isEmployee||req.user.isAdmin) {
+    if (req.user.isEmployee || req.user.isAdmin) {
       res.sendFile(path.join(__dirname, "../public/employee.html"));
     }
     res.redirect("/customers");
