@@ -101,4 +101,17 @@ module.exports = function(app) {
       });
     }
   });
+  app.get("/api/empolyer-info", function(req, res) {
+    if (!req.employee) {
+      res.json({});
+    } else {
+      res.json({
+        email: req.employee.email,
+        id: req.employee.id,
+        firstName: req.employee.firstName,
+        lastName: req.employee.lastName,
+        phoneNumber: req.employee.phoneNumber
+      });
+    }
+  });
 };
