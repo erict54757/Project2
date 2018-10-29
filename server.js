@@ -1,16 +1,21 @@
 require("dotenv").config();
 var express = require("express");
 var exphbs = require("express-handlebars");
+var passport = require("passport");
 
 var db = require("./models");
 
 var app = express();
 var PORT = process.env.PORT || 3000;
+var session = require("express-session");
 
 // Middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static("public"));
+app.use(session({ secret: "cats" }));
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Handlebars
 app.engine(
