@@ -28,8 +28,12 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/customer.html"));
   });
 
-  app.get("/admin", isAdmin, function(req, res) {
+  app.get("/admin", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/admin.html"));
+  });
+
+  app.get("/admin/items", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/inventory.html"));
   });
 
   app.get("/employee", isEmployee, function(req, res) {

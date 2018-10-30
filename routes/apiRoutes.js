@@ -6,6 +6,81 @@ var isAdmin = require("../config/middleware/isAdmin");
 // var isEmployee = require("../config/middleware/isEmployee");
 
 module.exports = function(app) {
+
+  app.post("/api/login", passport.authenticate("local"), function(req, res) {
+    res.json("/customers");
+
+    // res.redirect("/customers");
+  });
+
+  app.post("/api/signup", function(req, res) {
+    db.User.create({
+      email: req.body.email,
+      password: req.body.password
+    })
+      .then(function() {
+        res.redirect(307, "/api/login");
+      })
+      .catch(function(err) {
+        console.log(err);
+        res.json(err);
+        // res.status(422).json(err.errors[0].message);
+      });
+  });
+  app.post("/api/items", function(req, res) {
+    db.ItemListing.create({
+      item: req.body.item,
+      price: req.body.price,
+      description: req.body.description
+    })
+      .then(function(results) {
+        res.json(results)
+      })
+      .catch(function(err) {
+        console.log(err);
+        res.json(err);
+        // res.status(422).json(err.errors[0].message);
+      });
+  });
+
+  app.post("/api/reservations", function(req, res) {
+    db.ReservationListing.create({
+      item: req.body.item,
+      description: req.body.description
+    })
+      .then(function(results) {
+        res.json(results)
+      })
+      .catch(function(err) {
+        console.log(err);
+        res.json(err);
+        // res.status(422).json(err.errors[0].message);
+      });
+  });
+
+  app.get("/api/items", function(req, res) {
+
+    db.ItemListing.findAll({}).then(function(showitems) {
+      console.log(showitems);
+      res.json(showitems);
+    });
+  });
+
+  app.get("/api/reservations", function(req, res) {
+
+    db.ItemListing.findAll({}).then(function(showreservations) {
+      console.log(showreservations);
+      res.json(showreservations);
+    });
+  });
+
+
+  app.delete("/api/items", function(req, res) {
+    db.ItemListing
+  })
+
+
+
   app.put("/api/makeAppointment", isAuthenticated, function(req, res) {
     console.log(req.body.reservations);
     db.User.update(
