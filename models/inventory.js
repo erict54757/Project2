@@ -1,4 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
+
   var ItemListing = sequelize.define("ItemListing", {
     item: {
       type: DataTypes.STRING,
@@ -17,6 +18,7 @@ module.exports = function(sequelize, DataTypes) {
       valiedate: {
         len: [1]
       }
+
     }
   });
   return ItemListing;
