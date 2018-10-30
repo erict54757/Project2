@@ -38,17 +38,17 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     },
-    // reservations: {
-    //   type: DataTypes.TEXT
-    // },
-    // pastReservations: {
-    //   type: DataTypes.TEXT,
-    //   allowNull: false
-    // },
-    // comments: {
-    //   type: DataTypes.TEXT,
-    //   allowNull: false
-    // },
+    reservations: {
+      type: DataTypes.TEXT
+    },
+    pastReservations: {
+      type: DataTypes.TEXT,
+      allowNull: true
+    },
+    comments: {
+      type: DataTypes.TEXT,
+      allowNull: true
+    },
     isCustomer: {
       type: DataTypes.BOOLEAN,
 

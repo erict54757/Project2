@@ -24,12 +24,18 @@
         <button type="button">Inventory</button>
     </div>
     <div id="innerCont">
-        <div class="col-3 col-s-3" id="records">
+        <div class="col-3 col-s-3">
             records list
+            <div class="records">
+
+            </div>
         </div>
         <div class="col-8 col-s-8" id="form">
+          
             <!-- customer -->
-            <div class="fcont">
+          
+            <!-- <div class="fcont">
+                Customer ID: <span class="idNum"></span>
                 <form class="sign-up">
                     <div class="fdiv col-5">
                         User Name:<br>
@@ -38,7 +44,7 @@
                         <input type="password" id="password-input">
                         <br>
                         Phone Number:<br>
-                        <input type="text" name="phone"><br>
+                        <input type="number" name="phone"><br>
                     </div>
                     <div class="fdiv col-5">
                         First Name:<br>
@@ -46,7 +52,41 @@
                         Last Name:<br>
                         <input type="text" name="lastName"><br>
                         Email:<br>
-                        <input type="text" name="email">
+                        <input type="email" name="email">
+                        <br>
+                    </div>
+                    <div class="fdiv col-11">
+                        Comments:<br>
+                        <textarea name="message" rows="12" cols="150"></textarea>
+                        <br>
+                        <button class="submit1" type="submit" value="Submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+            <div class="appt">appointments</div>
+            <div class="purch">purchases</div> -->
+
+            <!-- employee -->
+
+            <div class="fcont">
+                <div class="col-11 col-s-11">Employee ID: <span class="idNum"></span></div>
+                <form class="sign-up">
+                    <div class="fdiv col-5">
+                        User Name:<br>
+                        <input type="text" name="uName" id="email-input"><br>
+                        Password:<br>
+                        <input type="password" id="password-input">
+                        <br>
+                        Phone Number:<br>
+                        <input type="number" name="phone"><br>
+                    </div>
+                    <div class="fdiv col-5">
+                        First Name:<br>
+                        <input type="text" name="firstName"><br>
+                        Last Name:<br>
+                        <input type="text" name="lastName"><br>
+                        Email:<br>
+                        <input type="email" name="email">
                         <br>
                     </div>
                     <div class="fdiv col-11">
@@ -59,38 +99,29 @@
             </div>
             <div class="appt">appointments</div>
             <div class="purch">purchases</div>
-            <!-- employee -->
-            <!-- <div class="fcont">
-                <form class="sign-up">
-                    <div class="fdiv col-5">
-                        User Name:<br>
-                        <input type="text" name="uName" id="email-input"><br>
-                        Password:<br>
-                        <input type="password" id="password-input">
-                        <br>
-                        Phone Number:<br>
-                        <input type="text" name="phone"><br>
-                    </div>
-                    <div class="fdiv col-5">
-                        First Name:<br>
-                        <input type="text" name="firstName"><br>
-                        Last Name:<br>
-                        <input type="text" name="lastName"><br>
-                        Email:<br>
-                        <input type="text" name="email">
-                        <br>
-                    </div>
-                    <div class="fdiv col-11">
-                        Comments:<br>
-                        <textarea name="message" rows="10" cols="30"></textarea>
-                        <br>
-                        <button class="submit1" type="submit" value="Submit">Submit</button>
-                    </div>
-                </form>
-            </div>
-            <div class="appt">appointments</div>
-            <div class="purch">purchases</div> -->
+
             <!-- Inventory -->
+
+            <!-- <div class="fcont">
+                <form id="inv-creation">
+                    <div class="form-row">
+                        <div class="form-group col-5 col-s-5">
+                            <label for="item">Item</label><br>
+                            <input type="text" class="form-control" id="item" placeholder="item">
+                        </div>
+                    </div>
+                    <div class="form-group col-5 col-s-5">
+                        <label for="price">Price</label><br>
+                        <input class="form-control" id="price" placeholder="$">
+                    </div>
+                    <div class="form-group col-11 col-s-11">
+                        <label for="description">Description</label><br>
+                        <textarea name="description" id="description" cols="150" rows="12"></textarea>
+                    </div>
+
+                    <button id="create" type="submit" class="btn btn-primary">Create</button>
+                </form>
+            </div> -->
 
         </div>
     </div>

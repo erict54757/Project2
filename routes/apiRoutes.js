@@ -2,6 +2,8 @@
 var db = require("../models");
 var passport = require("../config/passport");
 var isAuthenticated = require("../config/middleware/isAuthenticated");
+var isAdmin = require("../config/middleware/isAdmin");
+// var isEmployee = require("../config/middleware/isEmployee");
 
 module.exports = function(app) {
   app.post("/api/login", passport.authenticate("local"), function(req, res) {
@@ -53,13 +55,14 @@ module.exports = function(app) {
       });
   });
   app.put("/api/makeAppointment", isAuthenticated, function(req, res) {
+    console.log(req.body.reservations);
     db.User.update(
       {
         reservations: req.body.reservations
       },
       {
-        WHERE: {
-          User: req.body.user
+        where: {
+          id: req.body.id
         }
       }
     )
@@ -93,13 +96,26 @@ module.exports = function(app) {
       });
     }
   });
+  //route for getting all inventory
+  app.get("/api/all/Inventory", isAdmin, function(req, res) {
+    if (!req.user) {
+      // The user is not logged in, send back an empty object
+      res.json({});
+    } else {
+      // Otherwise send back the user's email and id
+      // Sending back a password, even a hashed password, isn't a good idea
+      db.Inventory.findAll({}).then(function(inventoryData) {
+        res.json(inventoryData);
+      });
+    }
+  });
 
   //route for retrieving customer info
 
   app.get("/api/customer-info", isAuthenticated, function(req, res) {
     if (!req.user) {
       // The user is not logged in, send back an empty object
-      res.json({ key: "eric" });
+      res.json({});
     } else {
       // Otherwise send back the user's email and id
       // Sending back a password, even a hashed password, isn't a good idea
