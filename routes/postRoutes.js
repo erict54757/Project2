@@ -67,7 +67,7 @@ module.exports = function(app) {
         // res.status(422).json(err.errors[0].message);
       });
   });
-  app.post("/api/addCustomer", isAdmin, function(req, res) {
+  app.post("/api/addEmployee", isAdmin, function(req, res) {
     db.User.create({
       email: req.body.email,
       firstName: req.body.firstName,
