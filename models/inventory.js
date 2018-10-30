@@ -11,11 +11,8 @@ module.exports = function(sequelize, DataTypes) {
     description: {
       type: DataTypes.TEXT,
       allowNull: false,
-      valiedate: {
-        len: [1]
-      }
-
-    }
+     
+    },
     price: {
       type: DataTypes.INTEGER,
       defaultValue: null
