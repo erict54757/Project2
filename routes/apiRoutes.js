@@ -6,6 +6,7 @@ var isAdmin = require("../config/middleware/isAdmin");
 // var isEmployee = require("../config/middleware/isEmployee");
 
 module.exports = function(app) {
+<<<<<<< HEAD
   app.post("/api/login", passport.authenticate("local"), function(req, res) {
     // res.json("/customers");
     // res.redirect("/customers");
@@ -25,6 +26,13 @@ module.exports = function(app) {
         return res.json("/customers");
       }
     });
+=======
+
+  app.post("/api/login", passport.authenticate("local"), function(req, res) {
+    res.json("/customers");
+
+    // res.redirect("/customers");
+>>>>>>> 0d44980c18ba9f11bacd56dfe3a9a4f79b1e7e84
   });
 
   app.post("/api/signup", function(req, res) {
@@ -41,12 +49,22 @@ module.exports = function(app) {
         // res.status(422).json(err.errors[0].message);
       });
   });
+<<<<<<< HEAD
   app.post("/api/makeInventory", function(req, res) {
     db.Inventory.create({
       Inventory: req.body.Inventory
     })
       .then(function() {
         res.redirect(307, "/admin");
+=======
+  app.post("/api/items", function(req, res) {
+    db.ItemListing.create({
+      item: req.body.item,
+      price: req.body.price,
+      description: req.body.description
+    })
+      .then(function(results) {
+        res.json(results)
       })
       .catch(function(err) {
         console.log(err);
@@ -54,6 +72,49 @@ module.exports = function(app) {
         // res.status(422).json(err.errors[0].message);
       });
   });
+
+  app.post("/api/reservations", function(req, res) {
+    db.ReservationListing.create({
+      item: req.body.item,
+      description: req.body.description
+    })
+      .then(function(results) {
+        res.json(results)
+>>>>>>> 0d44980c18ba9f11bacd56dfe3a9a4f79b1e7e84
+      })
+      .catch(function(err) {
+        console.log(err);
+        res.json(err);
+        // res.status(422).json(err.errors[0].message);
+      });
+  });
+<<<<<<< HEAD
+=======
+
+  app.get("/api/items", function(req, res) {
+
+    db.ItemListing.findAll({}).then(function(showitems) {
+      console.log(showitems);
+      res.json(showitems);
+    });
+  });
+
+  app.get("/api/reservations", function(req, res) {
+
+    db.ItemListing.findAll({}).then(function(showreservations) {
+      console.log(showreservations);
+      res.json(showreservations);
+    });
+  });
+
+
+  app.delete("/api/items", function(req, res) {
+    db.ItemListing
+  })
+
+
+
+>>>>>>> 0d44980c18ba9f11bacd56dfe3a9a4f79b1e7e84
   app.put("/api/makeAppointment", isAuthenticated, function(req, res) {
     console.log(req.body.reservations);
     db.User.update(
