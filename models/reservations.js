@@ -1,5 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
-  var ReListing = sequelize.define("ItemListing", {
+
+  var ReservationListing = sequelize.define("ReservationListing", {
     item: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -13,6 +14,11 @@ module.exports = function(sequelize, DataTypes) {
       valiedate: {
         len: [1]
       }
+
+    }
+    price: {
+      type: DataTypes.INTEGER,
+      defaultValue: null
     }
   });
   return ItemListing;

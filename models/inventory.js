@@ -8,10 +8,6 @@ module.exports = function(sequelize, DataTypes) {
         len: [1]
       }
     },
-    price: {
-      type: DataTypes.INTEGER,
-      defaultValue: null
-    },
     description: {
       type: DataTypes.TEXT,
       allowNull: false,
@@ -19,6 +15,10 @@ module.exports = function(sequelize, DataTypes) {
         len: [1]
       }
 
+    }
+    price: {
+      type: DataTypes.INTEGER,
+      defaultValue: null
     }
   });
   return ItemListing;
