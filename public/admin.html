@@ -19,9 +19,9 @@
         <h1>Omni</h1>
     </header>
     <div class="menu">
-        <button type="button">Customers</button>
-        <button type="button">Employees</button>
-        <button type="button">Inventory</button>
+        <button type="button" id="customerShow">Customers</button>
+        <button type="button" id="employeeShow">Employees</button>
+        <button type="button" id="inventoryShow">Inventory</button>
     </div>
     <div id="innerCont">
         <div class="col-3 col-s-3">
@@ -34,7 +34,7 @@
           
             <!-- customer -->
           
-            <!-- <div class="fcont" id=customerForm>
+             <div class="fcont" id=customerForm>
                 Customer ID: <span class="idNum"></span>
                 <form class="sign-up">
                     <div class="fdiv col-5">
@@ -64,11 +64,11 @@
                 </form>
             </div>
             <div class="appt">appointments</div>
-            <div class="purch">purchases</div> -->
+            <div class="purch">purchases</div> 
 
             <!-- employee -->
 
-            <div class="fcont">
+            <div class="fcont" id="employeeForm">
                 <div class="col-11 col-s-11">Employee ID: <span class="idNum"></span></div>
                 <form class="sign-up">
                     <div class="fdiv col-5">
@@ -102,7 +102,7 @@
 
             <!-- Inventory -->
 
-            <!-- <div class="fcont">
+         <div class="fcont" id=inventoryForm>
                 <form id="inv-creation">
                     <div class="form-row">
                         <div class="form-group col-5 col-s-5">
@@ -121,14 +121,15 @@
 
                     <button id="create" type="submit" class="btn btn-primary">Create</button>
                 </form>
-            </div> -->
+            </div> 
 
         </div>
     </div>
     <footer>
         copyright
     </footer>
-
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="./js/adminjs.js"></script>
 </body>
 
 </html>
