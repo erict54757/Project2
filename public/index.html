@@ -18,7 +18,7 @@
     <header>
         <h1>Omni</h1>
     </header>
-    <div id = "about">
+    <div id="about">
         Omni is a comprehensive system for customer data and inventory management, providing such features as:
         <ul>
             <li>
@@ -35,32 +35,41 @@
             </li>
         </ul>
     </div>
-    <div id = "logDisp">
-        <form class="sign-up">
-            User Name:<br>
-            <input type="text" name="uName" id="email-input"><br>
-            Password:<br>
-            <input type="password" id="password-input">
-            <br>
-            First Name:<br>
-            <input type="text" id="firstName-input" name="firstName"><br>
-            Last Name:<br>
-            <input type="text" id="lastName-input" name="lastName"><br>
-            Phone Number:<br>
-            <input type="text" id="phoneNumber-input" name="phone"><br>
-            Email:<br>
-            <input type="text" name="email">
-            <br>
-            <button class="submit2" type="submit" value="Login">Login</button>
-            <button class="submit1" type="submit" value="Sign up">Sign Up</button>
-        </form>
 
-      
+    <div id="logDisp col-10 col-s-10">
+        <div class="col-11 col-s- 11" id = "login">
+            <form class="sign-up col-6 col-s-6">
+                <div class="col-11 col-s-11">
+                    User Name:<br>
+                    <input type="text" name="uName" id="email-input"><br>
+                    Password:<br>
+                    <input type="password" id="password-input">
+                    <br>
+                </div>
+                <div class="col-11 col-s-11" id = "info">
+                    First Name:<br>
+                    <input type="text" name="firstName"><br>
+                    Last Name:<br>
+                    <input type="text" name="lastName"><br>
+                    Phone Number:<br>
+                    <input type="number" name="phone"><br>
+                    Email:<br>
+                    <input type="email" name="email">
+                    <br>
+                </div>
+                <div class="col-11 col-s-11">
+                    <button class="submit2" type="submit" value="Login">Login</button>
+                    <button class="submit1" type="submit" value="Sign up">Sign Up</button>
+                </div>
+            </form>
+        </div>
+
+
     </div>
     <footer>
         contact links
     </footer>
-    <script src="https://code.jquery.com/jquery-3.3.1.js" ></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 
     <script src="./js/sign-up.js"></script>
     <script src="./js/login.js"></script>

@@ -7,7 +7,6 @@ body {
   background-color: #ebeced;
   color: #3e3e3b;
   box-sizing: border-box;
-  /* text-align: center; */
   display:flex;
   flex-direction: column;
   font-family: 'Crimson Text', Georgia, Times, serif;
@@ -49,7 +48,17 @@ button {
   border-bottom-style: solid;
   border-width: 2px;
 }
+form {
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+input[type="text"], textarea {
 
+  background-color : #ebeced; 
+
+}
 footer {
   background-color: #3e3e3b; 
   color:#cbc5c1;
@@ -65,8 +74,18 @@ footer {
 }
 #logDisp {
   height: 40%;
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
+#login{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 
+}
 /* customer */
 
 #name {
@@ -77,17 +96,41 @@ footer {
   height:63%;
   background-color: #ebeced;
   display:flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   
 }
-#display {
-  height: 95%;
+.display {
+  height: 90%;
   display:flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
+  align-items: center;
 }
+.content {
+  height: 90%;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.history{
+  height: 100%;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.cDiv {
+  background-color: #ebeced;
+  height:45%;
+}
+#res {
+  display: flex;
+  flex-direction: column;
 
+}
 /* employee */
 
 .innerCont {
@@ -116,16 +159,10 @@ footer {
 }
 
 #form {
-  /* width: 70%; */
   display:flex;
   flex-direction: column;
 }
-form {
-  display:flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
+
 .fdiv {
  
 }
