@@ -1,12 +1,20 @@
 module.exports = function(sequelize, DataTypes) {
   var Inventory = sequelize.define("Inventory", {
-    Name: {
+    name: {
       type: DataTypes.STRING
     },
-    Price: {
-      type: DataTypes.DECIMAL
+    quantity: {
+      type: DataTypes.INTEGER
     },
-    Description: DataTypes.TEXT
+    price: {
+      type: DataTypes.DECIMAL(10, 2)
+    },
+    subCategory: {
+      type: DataTypes.TEXT
+    },
+    comments: {
+      type: DataTypes.TEXT
+    }
   });
   return Inventory;
 };
