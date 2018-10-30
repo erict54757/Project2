@@ -24,12 +24,14 @@ module.exports = function(app) {
         // res.status(422).json(err.errors[0].message);
       });
   });
-  app.post("/api/makeInventory", function(req, res) {
-    db.Inventory.create({
-      Inventory: req.body.Inventory
+  app.post("/api/items", function(req, res) {
+    db.ItemListing.create({
+      item: req.body.item,
+      price: req.body.price,
+      description: req.body.description
     })
-      .then(function() {
-        res.redirect(307, "/admin");
+      .then(function(results) {
+        res.json(results)
       })
       .catch(function(err) {
         console.log(err);
@@ -37,6 +39,43 @@ module.exports = function(app) {
         // res.status(422).json(err.errors[0].message);
       });
   });
+
+  app.post("/api/reservations", function(req, res) {
+    db.ReservationListing.create({
+      item: req.body.item,
+      description: req.body.description
+    })
+      .then(function(results) {
+        res.json(results)
+      })
+      .catch(function(err) {
+        console.log(err);
+        res.json(err);
+        // res.status(422).json(err.errors[0].message);
+      });
+  });
+
+  app.get("/api/items", function(req, res) {
+
+    db.ItemListing.findAll({}).then(function(showitems) {
+      console.log(showitems);
+      res.json(showitems);
+    });
+  });
+
+  app.get("/api/reservations", function(req, res) {
+
+    db.ItemListing.findAll({}).then(function(showreservations) {
+      console.log(showreservations);
+      res.json(showreservations);
+    });
+  });
+
+
+  app.delete("/api/items", function(req, res) {
+    db.ItemListing
+  })
+
   app.put("/api/makeAppointment", isAuthenticated, function(req, res) {
     db.User.update(
       {
