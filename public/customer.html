@@ -21,11 +21,12 @@
     <script type="text/javascript" src="js/customer.js"></script> -->
     <title>Customer</title>
 </head>
+
 <body>
     <header>
         <h1>Omni</h1>
     </header>
-       <div id="name">
+    <div id="name">
         <h3 class="customer-name">Customer Name</h3>
     </div>
     <div class="menu">
@@ -48,25 +49,23 @@
                 <form class="sign-up">
                     <div class="fdiv col-5">
                         User Name:<br>
-                        <input type="text" name="uName" id="uName"><br>
-                        Password:<br>
-                        <input type="password" id="password-input">
+                        <input type="text" name="uName" id="uName"><br> Password:
                         <br>
-                        Phone Number:<br>
+                        <input type="password" id="password-input">
+                        <br> Phone Number:<br>
                         <input type="number" name="phone" id="phNum"><br>
                     </div>
                     <div class="fdiv col-5">
                         First Name:<br>
-                        <input type="text" name="firstName" id="fName"><br>
-                        Last Name:<br>
-                        <input type="text" name="lastName" id="lName"><br>
-                        Email:<br>
+                        <input type="text" name="firstName" id="fName"><br> Last Name:<br>
+                        <input type="text" name="lastName" id="lName"><br> Email:
+                        <br>
                         <input type="email" name="email" id="email">
                         <br>
                     </div>
                     <div class="fdiv col-11">
                         Comments:<br>
-                        <textarea name="message" rows="12" cols="150" id = "comments"></textarea>
+                        <textarea name="message" rows="12" cols="150" id="comments"></textarea>
                         <br>
                         <button class="submit1" type="submit" value="Submit" id="update">Update</button>
                     </div>
@@ -76,39 +75,21 @@
             <!-- Make Appointment -->
 
             <div class="content col-11 col-s-11" id="appoint">
-                <form class="col-11 col-s-11" id="res">
-                    <div class="col-11 col-s-11">
-                    When would you like to schedule your appointment?
-                </div>
-                <div class="col-5 col-s-5">
-                    Select a date:
-                    <br>
-                    <input type="date" min="2018-10-29">
-                </div>
-                <div class="col-5 col-s-5">
-                    Select a time:
-                    <br>
-                    <select name="cars">
-                        <option value="95a">9:30 a.m.</option>
-                        <option value="10a">10:00 a.m.</option>
-                        <option value="105a">10:30 a.m.</option>
-                        <option value="11a">11:00 a.m.</option>
-                        <option value="115a">11:30 a.m.</option>
-                        <option value="12p">12:00 a.m.</option>
-                        <option value="125p">12:30 p.m.</option>
-                        <option value="1p">1:00 p.m.</option>
-                        <option value="15p">1:30 p.m.</option>
-                        <option value="2p">2:00 p.m.</option>
-                        <option value="25p">2:30 p.m.</option>
-                        <option value="3p">3:00 p.m.</option>
-                        <option value="35p">3:30 p.m.</option>
-                        <option value="4p">4:00 p.m.</option>
-                        <option value="45p">4:30 p.m.</option>
-                    </select>
-                    <br>
-                    <button type="submit" value="submit">Make Appointment</button>
-                </div>
-                </form>
+                    <form class="col-11 col-s-11" id="res">
+                        When would you like to schedule your appointment?
+                        <br> Select a date:
+                        <br>
+                        <input id="myDate" type="date" value=""> Select a time:
+                        <br>
+                        <label for="appt-time">Choose an appointment time (opening hours 12:00 to 18:00): </label>
+                        <input id="appt-time" type="time" name="appt-time" min="10:00" max="18:00">
+                        <span class="validity"></span>
+                        <br>
+                        <label for="group-count">How many?</label>
+                        <input id="group-count" type="number" min="1" name="group-count">
+                        <br>
+                    </form>
+                    <button id="datetime" type="submit"> submit</button>
             </div>
 
 
@@ -117,15 +98,14 @@
             <div class="content col-11 col-s-11" id="history">
                 <div class="cDiv col-12 col-s-12">Appointments</div>
                 <div class="cDiv col-12 col-s-12">Purchases</div>
-            </div> -->
+            </div>
 
             <!-- Contact Us -->
 
             <div class="content" id="cont">
                 <form>
                     Subject:<br>
-                    <input type="text" name="subject"><br>
-                    What can we help you with today?<br>
+                    <input type="text" name="subject"><br> What can we help you with today?<br>
                     <textarea name="message" rows="20" cols="100"></textarea>
                     <button class="submit1" type="submit" value="Submit">Send</button>
                 </form>
