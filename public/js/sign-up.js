@@ -3,9 +3,9 @@ $(document).ready(function() {
   var signUpForm = $(".submit1");
   var emailInput = $("#email-input");
   var passwordInput = $("#password-input");
-  // var firstName = $("#firstName-input");
-  // var lastName = $("#lastName-input");
-  // var phoneNumber = $("#phoneNumber-input");
+  var firstName = $("#firstName-input");
+  var lastName = $("#lastName-input");
+  var phoneNumber = $("#phoneNumber-input");
 
   // When the signup button is clicked, we validate the email and password are not blank
   signUpForm.click(function(event) {

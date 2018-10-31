@@ -13,26 +13,26 @@ module.exports = function(sequelize, DataTypes) {
         isEmail: true
       }
     },
-    // firstName: {
-    //   type: DataTypes.STRING,
-    //   allowNull: false,
-    //   is: ["^[a-z]+$", "i"],
-    //   len: [2, 20],
-    //   notEmpty: true
-    // },
-    // lastName: {
-    //   type: DataTypes.STRING,
-    //   allowNull: false,
-    //   is: ["^[a-z]+$", "i"],
-    //   len: [2, 20],
-    //   notEmpty: true
-    // },
-    // phoneNumber: {
-    //   type: DataTypes.INTEGER,
-    //   allowNull: false,
-    //   isNumeric: true,
-    //   notEmpty: true
-    // },
+    firstName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      is: ["^[a-z]+$", "i"],
+      len: [2, 20],
+      notEmpty: true
+    },
+    lastName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      is: ["^[a-z]+$", "i"],
+      len: [2, 20],
+      notEmpty: true
+    },
+    phoneNumber: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      isNumeric: true,
+      notEmpty: true
+    },
     // // The password cannot be null
     password: {
       type: DataTypes.STRING,

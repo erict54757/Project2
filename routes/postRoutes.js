@@ -32,8 +32,8 @@ module.exports = function(app) {
   });
   //Add inventory to list
   app.post("/api/makeInventory", isAdmin, function(req, res) {
-    db.Inventory.create({
-      Inventory: req.body.Inventory
+    db.inventory.create({
+      Inventory: req.body.ItemListing
     })
       .then(function() {
         res.redirect(307, "/admin");
