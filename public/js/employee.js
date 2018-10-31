@@ -35,9 +35,10 @@ $("document").ready(function() {
 	$.get("/api/customer-info").then(function(data) {
 
 		data.forEach(function() {
+			console.log(data);
 			var option = $("<option>");
-			$(option).attr("value", data.id);
-			$(option).text(data.lastName + "," + data.firstName);
+			$(option).attr("value", this.id);
+			$(option).text(this.lastName + "," + this.firstName);
 			$("#cust").append(option);
 
 		});
