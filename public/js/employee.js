@@ -6,10 +6,10 @@ $("document").ready(function() {
 		console.log(data);
 		data.forEach(function(){
 			var invBtn = $("<button>");
-			$(invBtn).data("name", data.name);
-			$(invBtn).data("price", data.price);
+			$(invBtn).data("name", this.name);
+			$(invBtn).data("price", this.price);
 			$(invBtn).addClass("prod");
-			$(invBtn).text(data.name);
+			$(invBtn).text(this.name);
 			$("#inventory").append(invBtn);
 		});
 	});
@@ -36,8 +36,8 @@ $("document").ready(function() {
 
 		data.forEach(function() {
 			var option = $("<option>");
-			$(option).attr("value", data.id);
-			$(option).text(data.lastName + "," + data.firstName);
+			$(option).attr("value", this.id);
+			$(option).text(this.lastName + "," + this.firstName);
 			$("#cust").append(option);
 
 		});
