@@ -89,6 +89,7 @@ module.exports = function(app) {
 		})
 			.then(function() {
 				res.redirect("/admin");
+
 			})
 			.catch(function(err) {
 				console.log(err);

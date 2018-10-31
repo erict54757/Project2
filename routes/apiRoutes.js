@@ -7,6 +7,7 @@ var isAdmin = require("../config/middleware/isAdmin");
 
 module.exports = function(app) {
 
+
 	app.post("/api/login", passport.authenticate("local"), function(req, res) {
 		console.log(req.body);
 		db.User.findOne({
@@ -226,5 +227,6 @@ module.exports = function(app) {
 				// res.status(422).json(err.errors[0].message);
 			});
 	});
+
 
 };

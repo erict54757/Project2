@@ -10,36 +10,37 @@
     <link rel="stylesheet" type="text/css" href="styles/styles.css">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
     <link href="https://fonts.googleapis.com/css?family=Allerta" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
     <!-- Javascript -->
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/customer.js"></script>
     <title>Customer</title>
 </head>
-
 <body>
-
     <header>
         <h1>Omni</h1>
     </header>
-    <div id="name">
+       <div id="name">
         <h3 class="customer-name">Customer Name</h3>
     </div>
     <div class="menu">
         <button class="btn-lg"><a href="/logout">logout</a></button>
         <button id="customerInfo" type="button">Customer Info</button>
-        <button type="button">Make Appointment</button>
-        <button type="button">Account History</button>
-        <button type="button">Contact Us</button>
+        <button id="makeAppt" type="button">Make Appointment</button>
+        <button id="acctHist" type="button">Account History</button>
+        <button id="contact" type="button">Contact Us</button>
+        <button id="exit" type="button">Log Out</button>
     </div>
     <div class="wrap col-12 col-s-12">
         <div class="display col-10 col-s-10">
             <!-- Customer info -->
 
-            <!-- <div class="content">
+            <div class="content" id="cInfo">
                 <div class="col-11">
                     Customer ID: <span class="idNum"></span>
 
@@ -47,34 +48,34 @@
                 <form class="sign-up">
                     <div class="fdiv col-5">
                         User Name:<br>
-                        <input type="text" name="uName" id="email-input"><br>
+                        <input type="text" name="uName" id="uName"><br>
                         Password:<br>
                         <input type="password" id="password-input">
                         <br>
                         Phone Number:<br>
-                        <input type="number" name="phone"><br>
+                        <input type="number" name="phone" id="phNum"><br>
                     </div>
                     <div class="fdiv col-5">
                         First Name:<br>
-                        <input type="text" name="firstName"><br>
+                        <input type="text" name="firstName" id="fName"><br>
                         Last Name:<br>
-                        <input type="text" name="lastName"><br>
+                        <input type="text" name="lastName" id="lName"><br>
                         Email:<br>
-                        <input type="email" name="email">
+                        <input type="email" name="email" id="email">
                         <br>
                     </div>
                     <div class="fdiv col-11">
                         Comments:<br>
-                        <textarea name="message" rows="12" cols="150"></textarea>
+                        <textarea name="message" rows="12" cols="150" id = "comments"></textarea>
                         <br>
-                        <button class="submit1" type="submit" value="Submit">Update</button>
+                        <button class="submit1" type="submit" value="Submit" id="update">Update</button>
                     </div>
                 </form>
-            </div> -->
+            </div>
 
             <!-- Make Appointment -->
 
-            <!-- <div class="content col-11 col-s-11">
+            <div class="content col-11 col-s-11" id="appoint">
                 <form class="col-11 col-s-11" id="res">
                     <div class="col-11 col-s-11">
                     When would you like to schedule your appointment?
@@ -108,19 +109,19 @@
                     <button type="submit" value="submit">Make Appointment</button>
                 </div>
                 </form>
-            </div> -->
+            </div>
 
 
             <!-- History -->
 
-            <div class="content col-11 col-s-11">
+            <div class="content col-11 col-s-11" id="history">
                 <div class="cDiv col-12 col-s-12">Appointments</div>
                 <div class="cDiv col-12 col-s-12">Purchases</div>
             </div>
 
             <!-- Contact Us -->
 
-            <!-- <div class="content">
+            <div class="content" id="cont">
                 <form>
                     Subject:<br>
                     <input type="text" name="subject"><br>
@@ -128,7 +129,7 @@
                     <textarea name="message" rows="20" cols="100"></textarea>
                     <button class="submit1" type="submit" value="Submit">Send</button>
                 </form>
-            </div> -->
+            </div>
 
         </div>
     </div>
