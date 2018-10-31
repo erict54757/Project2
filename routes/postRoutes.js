@@ -31,12 +31,18 @@ module.exports = function(app) {
 			});
 	});
 	//Add inventory to list
-	app.post("/api/makeInventory", isAdmin, function(req, res) {
-		db.Inventory.create({
-			Inventory: req.body.Inventory
+	app.post("/api/create/item",isAdmin, function(req, res) {
+		console.log(req.body.item+"this is create");
+		console.log(req.body.price);
+		console.log(req.body.description);
+		db.ItemListing.create({
+			item: req.body.item,
+			description: req.body.description,
+			price:req.body.price
+      
 		})
 			.then(function() {
-				res.redirect(307, "/admin");
+				res.redirect("/admin");
 			})
 			.catch(function(err) {
 				console.log(err);
@@ -59,7 +65,7 @@ module.exports = function(app) {
 			isAdmin: false
 		})
 			.then(function() {
-				res.redirect(307, "/admin");
+				res.redirect("/admin");
 			})
 			.catch(function(err) {
 				console.log(err);
@@ -67,7 +73,7 @@ module.exports = function(app) {
 				// res.status(422).json(err.errors[0].message);
 			});
 	});
-	app.post("/api/addEmployee", isAdmin, function(req, res) {
+	app.post("/api/add/customer", isAdmin, function(req, res) {
 		db.User.create({
 			email: req.body.email,
 			firstName: req.body.firstName,
@@ -82,7 +88,7 @@ module.exports = function(app) {
 			isAdmin: false
 		})
 			.then(function() {
-				res.redirect(307, "/admin");
+        res.redirect("/admin");
 			})
 			.catch(function(err) {
 				console.log(err);

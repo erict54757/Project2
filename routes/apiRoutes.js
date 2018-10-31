@@ -170,4 +170,21 @@ module.exports = function(app) {
 			});
 		}
 	});
+  
+	app.delete("/api/user/delete/:id", isAdmin, function(req, res) {
+	
+		db.User.destroy({
+			where: {
+				id: req.params.id
+			}
+		})
+			.then(function() {
+				res.redirect( "/admin");
+			})
+			.catch(function(err) {
+				console.log(err);
+				res.json(err);
+				// res.status(422).json(err.errors[0].message);
+			});
+	});
 };
