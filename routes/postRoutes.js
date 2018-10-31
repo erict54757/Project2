@@ -42,7 +42,7 @@ module.exports = function(app) {
       
 		})
 			.then(function() {
-				res.redirect("/admin");
+				res.json("/admin");
 			})
 			.catch(function(err) {
 				console.log(err);
