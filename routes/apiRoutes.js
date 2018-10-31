@@ -8,15 +8,16 @@ var isAdmin = require("../config/middleware/isAdmin");
 module.exports = function(app) {
 
   app.post("/api/login", passport.authenticate("local"), function(req, res) {
-    res.json("/customers");
-
-    // res.redirect("/customers");
+    res.redirect("/customers");
   });
 
   app.post("/api/signup", function(req, res) {
     db.User.create({
       email: req.body.email,
-      password: req.body.password
+      password: req.body.password,
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      phoneNumber: req.body.phoneNumber
     })
       .then(function() {
         res.redirect(307, "/api/login");
@@ -45,8 +46,11 @@ module.exports = function(app) {
 
   app.post("/api/reservations", function(req, res) {
     db.ReservationListing.create({
-      item: req.body.item,
-      description: req.body.description
+      date: req.body.date,
+      time: req.body.time,
+      groupcount: req.body.groupcount,
+      creator: req.body.creator,
+      email: req.body.email
     })
       .then(function(results) {
         res.json(results)
@@ -58,19 +62,19 @@ module.exports = function(app) {
       });
   });
 
+  app.get("/api/reservations", function(req, res) {
+
+    db.ReservationListing.findAll({}).then(function(showreservations) {
+      console.log(showreservations);
+      res.json(showreservations);
+    });
+  });
+
   app.get("/api/items", function(req, res) {
 
     db.ItemListing.findAll({}).then(function(showitems) {
       console.log(showitems);
       res.json(showitems);
-    });
-  });
-
-  app.get("/api/reservations", function(req, res) {
-
-    db.ItemListing.findAll({}).then(function(showreservations) {
-      console.log(showreservations);
-      res.json(showreservations);
     });
   });
 
@@ -119,10 +123,14 @@ module.exports = function(app) {
       // Sending back a password, even a hashed password, isn't a good idea
       res.json({
         email: req.user.email,
-        id: req.user.id
+        id: req.user.id,
+        firstName: req.user.firstName,
+        lastName: req.user.lastName,
+        phoneNumber: req.user.phoneNumber
       });
     }
   });
+
   //route for getting all inventory
   app.get("/api/all/Inventory", isAdmin, function(req, res) {
     if (!req.user) {
@@ -167,4 +175,5 @@ module.exports = function(app) {
       });
     }
   });
+
 };

@@ -3,5 +3,6 @@ $("document").ready(function() {
   // and updates the HTML on the page
   $.get("/api/user_data").then(function(data) {
     $(".customer-name").text("Welcome, " + data.email);
+    $(".customer-name").append(" | <a href='/logout'>Logout</a>");
   });
 });

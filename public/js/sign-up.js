@@ -1,16 +1,14 @@
 $(document).ready(function() {
   // Getting references to our form and input
-  var signUpForm = $(".submit1");
   var emailInput = $("#email-input");
   var passwordInput = $("#password-input");
   var firstName = $("#firstName-input");
   var lastName = $("#lastName-input");
   var phoneNumber = $("#phoneNumber-input");
-
+  
   // When the signup button is clicked, we validate the email and password are not blank
-  signUpForm.click(function(event) {
+  $(".signup").on("click", function(event) {
     event.preventDefault();
-    
     var userData = {
       email: emailInput.val().trim(),
       password: passwordInput.val().trim(),
@@ -47,9 +45,8 @@ $(document).ready(function() {
       firstName: firstName,
       lastName: lastName,
       phoneNumber: phoneNumber
-    })
-      .then(function(data) {
-        window.location.replace(data);
+    }).then(function() {
+        window.location.replace("/api/login");
         // If there's an error, handle it by throwing up a boostrap alert
       })
       .catch(handleLoginErr);

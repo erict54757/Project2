@@ -7,25 +7,31 @@ var isAdmin = require("../config/middleware/isAdmin");
 var isEmployee = require("../config/middleware/isEmployee");
 
 module.exports = function(app) {
-  app.get("/login", function(req, res) {
+  app.get("/login", isAuthenticated, function(req, res) {
     // If the user already has an account send them to the members page
     if (req.user) {
       res.redirect("/customers");
     }
-
-    res.sendFile(path.join(__dirname, "../public/login.html"));
+    res.sendFile(path.join(__dirname, "../public/index.html"));
   });
+
   app.get("/", function(req, res) {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.redirect("/customer");
+      res.redirect("/customers");
     }
-    res.sendFile(path.join(__dirname, "../public/admin.html"));
+    res.sendFile(path.join(__dirname, "../public/index.html"));
   });
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/customers", isAuthenticated, function(req, res) {
     res.sendFile(path.join(__dirname, "../public/customer.html"));
+  });
+  app.get("/reservations", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/reservation.html"));
+  });
+  app.get("/inventory", isAuthenticated, function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/inventory.html"));
   });
 
   app.get("/admin", function(req, res) {

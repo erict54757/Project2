@@ -14,8 +14,7 @@ module.exports = function(sequelize, DataTypes) {
       valiedate: {
         len: [1]
       }
-
-    }
+    },
     price: {
       type: DataTypes.INTEGER,
       defaultValue: null

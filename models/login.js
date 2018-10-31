@@ -29,7 +29,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     phoneNumber: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
       isNumeric: true,
       notEmpty: true
     },
@@ -77,5 +77,9 @@ module.exports = function(sequelize, DataTypes) {
       null
     );
   });
+
+  User.associate = function(models) {
+    User.hasMany(models.ReservationListing)
+  };
   return User;
 };
