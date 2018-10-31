@@ -16,7 +16,7 @@ $(document).ready(function(){
 		});
 		$.get("/api/customer-info").then(function(data){
 	
-            console.log("beginning"+ data)
+			console.log("beginning"+ data);
 			var Customer=[];
 			for (let i = 0; i < data.length; i++) {
 				if(data[i].isCustomer)
