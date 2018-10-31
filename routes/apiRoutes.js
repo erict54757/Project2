@@ -105,7 +105,33 @@ module.exports = function(app) {
 				// res.status(422).json(err.errors[0].message);
 			});
 	});
-
+	// put request for upadating user
+	app.put("/api/user/update", function(req, res) {
+		console.log(req.body);
+		db.User.update(
+			{
+				email: req.body.email,
+				password: req.body.password,
+				firstName: req.body.firstName,
+				lastName: req.body.lastName,
+				phoneNumber: req.body.phoneNumber,
+				comments: req.body.comments
+			},
+			{
+				where: {
+					id: req.body.id
+				}
+			}
+		)
+			.then(function() {
+				res.json("");
+			})
+			.catch(function(err) {
+				console.log(err);
+				res.json(err);
+				// res.status(422).json(err.errors[0].message);
+			});
+	});
 	// Route for logging user out
 	app.get("/logout", function(req, res) {
 		req.logout();
