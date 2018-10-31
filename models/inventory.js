@@ -14,8 +14,8 @@ module.exports = function(sequelize, DataTypes) {
      
 		},
 		price: {
-			type: DataTypes.INTEGER
-			// defaultValue: null
+			type: DataTypes.INTEGER,
+			defaultValue: null
 		}
 	});
 	return ItemListing;
