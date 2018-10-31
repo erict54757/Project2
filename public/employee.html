@@ -11,6 +11,8 @@
     <link href="https://fonts.googleapis.com/css?family=Allerta" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
     <!-- Javascript -->
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
     <title>Employee</title>
 </head>
 
@@ -25,13 +27,31 @@
         </div>
     <div class="innerCont">
         <div class="subs col-3 col-s-3" id="invoice">
-            current invoice
+            <div>
+                <form>
+                    Select Customer:
+                    <select name="customers" id="cust">
+                        
+                    </select>
+                </form>
+            </div>
+            <div>
+                <table style="width:100%" id="table">
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <button type="button" id="crInvoice">Create Invoice</button>
+            </div>
         </div>
         <div class="subs col-3 col-s-3" id="submenu">
-            submenu area
+
         </div>
         <div class="subs col-3 col-s-3" id="inventory">
-            main menu area
+
         </div>
     </div>
     <footer>
