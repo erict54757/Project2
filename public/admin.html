@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     
     <!-- Javascript -->
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
     <title>Admin</title>
 </head>
 
@@ -34,6 +36,7 @@
             </div>
         </div>
         <div class="col-8 col-s-8" id="form">
+
             <div class="container-fluid">
                     >
             <!-- customer -->
@@ -41,6 +44,7 @@
              <div class="fcont" id=customerForm>
                  <span class="idNum"></span>
                 <form class="sign-up" action="/api/add/customer" method="POST">
+
                     <div class="fdiv col-5">
                         User Name:<br>
                         <input type="text" name="uName" value="" class="email-input"><br>
@@ -71,9 +75,11 @@
 
             <!-- employee -->
 
+
             <div class="fcont" id="employeeForm">
                 <div class="col-11 col-s-11"> <span class="idNum"></span></div>
                 <form class="sign-up" action="/api/addEmployee" method="POST">
+
                     <div class="fdiv col-5">
                         User Name:<br>
                         <input type="text" name="uName" value="" class="email-input"><br>
@@ -106,6 +112,7 @@
 
          <div class="fcont" id=inventoryForm>
                 <form id="inv-creation" action="api/create/item" method="POST">
+
                     <div class="form-row">
                         <div class="form-group col-5 col-s-5">
                             <label for="item">Item</label><br>
@@ -123,7 +130,9 @@
 
                     <button id="create" type="submit" id="subminInventory" class="btn btn-primary">Create</button>
                 </form>
+
             </div> 
+
 
         </div>
     </div>
