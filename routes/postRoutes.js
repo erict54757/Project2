@@ -88,7 +88,7 @@ module.exports = function(app) {
 			isAdmin: false
 		})
 			.then(function() {
-res.redirect("/admin");
+				res.redirect("/admin");
 
 			})
 			.catch(function(err) {
