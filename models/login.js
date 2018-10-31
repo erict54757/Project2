@@ -3,56 +3,6 @@
 var bcrypt = require("bcrypt-nodejs");
 // Creating our User model
 module.exports = function(sequelize, DataTypes) {
-<<<<<<< HEAD
-  var User = sequelize.define("User", {
-    // The email cannot be null, and must be a proper email before creation
-    email: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      unique: true,
-      validate: {
-        isEmail: true
-      }
-    },
-    firstName: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      is: ["^[a-z]+$", "i"],
-      len: [2, 20],
-      notEmpty: true
-    },
-    lastName: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      is: ["^[a-z]+$", "i"],
-      len: [2, 20],
-      notEmpty: true
-    },
-    phoneNumber: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      isNumeric: true,
-      notEmpty: true
-    },
-    // // The password cannot be null
-    password: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    reservations: {
-      type: DataTypes.TEXT
-    },
-    pastReservations: {
-      type: DataTypes.TEXT,
-      allowNull: true
-    },
-    comments: {
-      type: DataTypes.TEXT,
-      allowNull: true
-    },
-    isCustomer: {
-      type: DataTypes.BOOLEAN,
-=======
 	var User = sequelize.define("User", {
 		// The email cannot be null, and must be a proper email before creation
 		email: {
@@ -101,7 +51,6 @@ module.exports = function(sequelize, DataTypes) {
 		},
 		isCustomer: {
 			type: DataTypes.BOOLEAN,
->>>>>>> 00987f71cd24e0128bbd4bbd6afccd2e678325ae
 
 			defaultValue: true
 		},

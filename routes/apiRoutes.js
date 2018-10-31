@@ -7,26 +7,24 @@ var isAdmin = require("../config/middleware/isAdmin");
 
 module.exports = function(app) {
 
-  app.post("/api/login", passport.authenticate("local"), function(req, res) {
-    // res.json("/customers");
-    // res.redirect("/customers");
-    console.log(req.body);
-    db.User.findOne({
-      where: {
-        email: req.body.email
-      }
-    }).then(function(results) {
-      console.log(results.dataValues);
-      var user = results.dataValues;
-      if (user.isAdmin === true) {
-        return res.json("/admin");
-      } else if (user.isEmployee === true) {
-        return res.json("/employee");
-      } else {
-        return res.json("/customers");
-      }
-    });
-  });
+	app.post("/api/login", passport.authenticate("local"), function(req, res) {
+		console.log(req.body);
+		db.User.findOne({
+			where: {
+				email: req.body.email
+			}
+		}).then(function(results) {
+			console.log(results.dataValues);
+			var user = results.dataValues;
+			if (user.isAdmin === true) {
+				return res.json("/admin");
+			} else if (user.isEmployee === true) {
+				return res.json("/employee");
+			} else {
+				return res.json("/customers");
+			}
+		});
+	});
 
 	app.post("/api/signup", function(req, res) {
 		db.User.create({
@@ -202,5 +200,5 @@ module.exports = function(app) {
 				// res.status(422).json(err.errors[0].message);
 			});
 	});
->>>>>>> 00987f71cd24e0128bbd4bbd6afccd2e678325ae
+
 };
