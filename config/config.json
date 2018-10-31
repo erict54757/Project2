@@ -3,13 +3,14 @@
     "username": "root",
     "password": "root",
     "database": "test_db",
+    "port":3306,
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
     "password": "root",
-    "port": 3306,
+    "port": 8889,
     "database": "test_db",
     "host": "localhost",
     "dialect": "mysql",

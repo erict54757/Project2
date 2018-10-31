@@ -62,8 +62,11 @@ module.exports = function(app) {
 
 	app.post("/api/reservations", function(req, res) {
 		db.ReservationListing.create({
-			item: req.body.item,
-			description: req.body.description
+			date: req.body.date,
+			time: req.body.time,
+			groupcount: req.body.groupcount,
+			creator: req.body.creator,
+			email: req.body.email
 		})
 			.then(function(results) {
 				res.json(results);
@@ -74,7 +77,7 @@ module.exports = function(app) {
 				// res.status(422).json(err.errors[0].message);
 			});
 	});
-
+  
 	app.get("/api/items", function(req, res) {
 
 		db.ItemListing.findAll({}).then(function(showitems) {
@@ -161,6 +164,7 @@ module.exports = function(app) {
 			// Otherwise send back the user's email and id
 			// Sending back a password, even a hashed password, isn't a good idea
 			res.json({
+				data: req.user,
 				email: req.user.email,
 				id: req.user.id
 			});

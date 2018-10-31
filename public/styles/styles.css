@@ -38,6 +38,15 @@ button {
   font-size: 16px;
   border-radius: 4px;
 }
+a {
+  background-color: #4c586f;
+  color: #cbc5c1;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  
+}
 
 .menu {
   flex-direction: row;
@@ -170,4 +179,24 @@ footer {
   background-color: #ebeced;
   margin:5px;
   height: 20%;
+}
+
+input[type="number"] {
+  width: 100px;
+}
+
+input + span {
+  padding-right: 30px;
+}
+
+input:invalid+span:after {
+  position: absolute;
+  content: '✖';
+  padding-left: 5px;
+}
+
+input:valid+span:after {
+  position: absolute;
+  content: '✓';
+  padding-left: 5px;
 }

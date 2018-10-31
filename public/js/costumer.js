@@ -2,7 +2,7 @@ $("document").ready(function() {
 	// This file just does a GET request to figure out which user is logged in
 	// and updates the HTML on the page
 	$.get("/api/user_data").then(function(data) {
-		console.log(data);
+		// console.log(data);
 		$(".customer-name").text("Welcome, " + data.data.firstName + " " + data.data.lastName);
 	});
   
@@ -50,9 +50,9 @@ $("document").ready(function() {
 
 	// ============================================customer info tab=================================================
 
-	$.get("/api/user_data").then(function(info){
-		console.log(info);
-		var data = info.data;
+	$.get("/api/user_data").then(function(data){
+		console.log(data);
+		var data = data.data;
 		$("#idNum").val(data.id);
 		$("#uName").val(data.uName);
 		$("#password-input").val(data.password);

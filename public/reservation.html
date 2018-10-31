@@ -6,23 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- CSS and Fonts -->
+    <!-- Compiled and minified JavaScript -->
     <link rel="stylesheet" type="text/css" href="styles/grid.css">
     <link rel="stylesheet" type="text/css" href="styles/styles.css">
-    <!-- Compiled and minified CSS -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
-    <!-- Compiled and minified JavaScript -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
-
     <link href="https://fonts.googleapis.com/css?family=Allerta" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
+
+
     <!-- Javascript -->
-    <!-- <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
-    <script type="text/javascript" src="js/customer.js"></script> -->
     <title>Customer</title>
 </head>
+​
 
 <body>
+    ​
     <header>
         <h1>Omni</h1>
     </header>
@@ -30,26 +27,24 @@
         <h3 class="customer-name">Customer Name</h3>
     </div>
     <div class="menu">
-
         <button id="customerInfo" type="button">Customer Info</button>
         <button id="makeAppt" type="button">Make Appointment</button>
         <button id="acctHist" type="button">Account History</button>
         <button id="contact" type="button">Contact Us</button>
-        <button id="exit" type="button"><a href="/logout">Log Out</a></button>
+        <button id="exit" type="button">Log Out</button>
     </div>
     <div class="wrap col-12 col-s-12">
         <div class="display col-10 col-s-10">
-            <!-- Customer info -->
-
+            <!-- Customer info
+            ​
             <div class="content" id="cInfo">
                 <div class="col-11">
                     Customer ID: <span class="idNum"></span>
-
                 </div>
                 <form class="sign-up">
                     <div class="fdiv col-5">
-                        UserID/Email:<br>
-                        <input type="email" name="email" id="email"><br> Password:
+                        User Name:<br>
+                        <input type="text" name="uName" id="uName"><br> Password:
                         <br>
                         <input type="password" id="password-input">
                         <br> Phone Number:<br>
@@ -58,7 +53,9 @@
                     <div class="fdiv col-5">
                         First Name:<br>
                         <input type="text" name="firstName" id="fName"><br> Last Name:<br>
-                        <input type="text" name="lastName" id="lName"><br>
+                        <input type="text" name="lastName" id="lName"><br> Email:
+                        <br>
+                        <input type="email" name="email" id="email">
                         <br>
                     </div>
                     <div class="fdiv col-11">
@@ -68,38 +65,46 @@
                         <button class="submit1" type="submit" value="Submit" id="update">Update</button>
                     </div>
                 </form>
-            </div>
-
+            </div> -->
+            ​
             <!-- Make Appointment -->
-
+            ​
             <div class="content col-11 col-s-11" id="appoint">
-                    <form class="col-11 col-s-11" id="res">
+                <form class="col-11 col-s-11" id="res">
+                    <div class="col-11 col-s-11">
                         When would you like to schedule your appointment?
-                        <br> Select a date:
+                    </div>
+                    <div class="col-11 col-s-11">
+                    </div>
+                    <div class="col-5 col-s-5">
+                        Select a date:
                         <br>
-                        <input id="myDate" type="date" value=""> Select a time:
+                        <input id="myDate" type="date" value="">
+                    </div>
+                    <div id="demo"></div>
+                    <div class="col-5 col-s-5">
+                        Select a time:
                         <br>
                         <label for="appt-time">Choose an appointment time (opening hours 12:00 to 18:00): </label>
                         <input id="appt-time" type="time" name="appt-time" min="10:00" max="18:00">
                         <span class="validity"></span>
-                        <br>
                         <label for="group-count">How many?</label>
                         <input id="group-count" type="number" min="1" name="group-count">
                         <br>
-                    </form>
-                    <button id="datetime" type="submit"> submit</button>
+                        <button id="datetime" type="submit"> submit</button>
+                    </div>
+                </form>
             </div>
-
-
-            <!-- History -->
-
+            ​
+            <!-- History
+            ​
             <div class="content col-11 col-s-11" id="history">
                 <div class="cDiv col-12 col-s-12">Appointments</div>
                 <div class="cDiv col-12 col-s-12">Purchases</div>
             </div>
-
-            <!-- Contact Us -->
-
+            ​ -->
+            <!-- Contact Us
+            ​
             <div class="content" id="cont">
                 <form>
                     Subject:<br>
@@ -107,15 +112,16 @@
                     <textarea name="message" rows="20" cols="100"></textarea>
                     <button class="submit1" type="submit" value="Submit">Send</button>
                 </form>
-            </div>
-
+            </div> -->
+            ​
         </div>
     </div>
     <footer>
         contact info
     </footer>
-    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="./js/costumer.js"></script>
+    <script src="./js/reservation.js"></script>
 
 </body>
 
