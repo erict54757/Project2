@@ -1,6 +1,6 @@
 $("document").ready(function() {
 
-// =========================main menu================================
+	// =========================main menu================================
 
 	$.get("/api/all/Inventory").then(function(data) {
 		console.log(data);
