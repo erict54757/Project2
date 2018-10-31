@@ -38,6 +38,15 @@ button {
   font-size: 16px;
   border-radius: 4px;
 }
+a {
+  background-color: #4c586f;
+  color: #cbc5c1;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  
+}
 
 .menu {
   flex-direction: row;
