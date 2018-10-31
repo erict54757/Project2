@@ -140,6 +140,7 @@ $(document).ready(function(){
 				div1.text("item:"+data[i].item);
 				div2.text("Description:"+data[i].description);
 				div3.text("price:"+data[i].price);
+                
 				div4.append(div1);
 				div4.append(div2);
 				div4.append(div3);
@@ -157,8 +158,11 @@ $(document).ready(function(){
 		$.ajax({
 			method: "DELETE",
 			url: "api/user/delete/" + id }).then(
-			 function(result) {
+       
+			function(result) {
 				console.log(result);
+              
+                
 
 				//
 			});
