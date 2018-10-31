@@ -15,8 +15,8 @@ $(document).ready(function(){
 			$(".idNum").text("Customer Id:"+data.id);
 		});
 		$.get("/api/customer-info").then(function(data){
-			$(".records").empty();
-			$(".idNum").empty();
+	
+            console.log("beginning"+ data)
 			var Customer=[];
 			for (let i = 0; i < data.length; i++) {
 				if(data[i].isCustomer)

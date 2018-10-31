@@ -26,7 +26,7 @@ module.exports = function(app) {
 			})
 			.catch(function(err) {
 				console.log(err);
-				//   res.redirect("/");
+				  res.redirect("/");
 				res.status(422).json(err.errors[0].message);
 			});
 	});
@@ -88,7 +88,7 @@ module.exports = function(app) {
 			isAdmin: false
 		})
 			.then(function() {
-res.redirect("/admin");
+				res.redirect("/admin");
 
 			})
 			.catch(function(err) {
