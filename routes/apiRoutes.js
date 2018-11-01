@@ -60,23 +60,23 @@ module.exports = function(app) {
 			});
 	});
 
-  app.post("/api/reservations", function(req, res) {
-    db.ReservationListing.create({
-      date: req.body.date,
-      time: req.body.time,
-      groupcount: req.body.groupcount,
-      creator: req.body.creator,
-      email: req.body.email
-    })
-      .then(function(results) {
-        res.json(results)
-      })
-      .catch(function(err) {
-        console.log(err);
-        res.json(err);
-        // res.status(422).json(err.errors[0].message);
-      });
-  });
+	app.post("/api/reservations", function(req, res) {
+		db.ReservationListing.create({
+			date: req.body.date,
+			time: req.body.time,
+			groupcount: req.body.groupcount,
+			creator: req.body.creator,
+			email: req.body.email
+		})
+			.then(function(results) {
+				res.json(results);
+			})
+			.catch(function(err) {
+				console.log(err);
+				res.json(err);
+				// res.status(422).json(err.errors[0].message);
+			});
+	});
   
 	app.get("/api/items", function(req, res) {
 
@@ -164,6 +164,7 @@ module.exports = function(app) {
 			// Otherwise send back the user's email and id
 			// Sending back a password, even a hashed password, isn't a good idea
 			res.json({
+				data: req.user,
 				email: req.user.email,
 				id: req.user.id
 			});
