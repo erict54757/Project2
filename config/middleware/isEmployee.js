@@ -2,7 +2,7 @@
 
 module.exports = function(req, res, next) {
 	// If the user is logged in, continue with the request to the restricted route
-	console.log(req.user.isAdmin);
+	console.log(req.user.isEmployee);
 	if (req.user.isAdmin || req.user.isEmployee) {
 		return next();
 	}

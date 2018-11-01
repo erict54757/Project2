@@ -29,8 +29,8 @@ $(document).ready(function() {
 			password: password
 		})
 			.then(function(data) {
-				window.location.replace("/customers");
-				// If there's an error, log the error
+				window.location.replace(data);
+				
 			})
 			.catch(function(err) {
 				console.log(err);
