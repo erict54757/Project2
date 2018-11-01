@@ -60,23 +60,23 @@ module.exports = function(app) {
 			});
 	});
 
-  app.post("/api/reservations", function(req, res) {
-    db.ReservationListing.create({
-      date: req.body.date,
-      time: req.body.time,
-      groupcount: req.body.groupcount,
-      creator: req.body.creator,
-      email: req.body.email
-    })
-      .then(function(results) {
-        res.json(results)
-      })
-      .catch(function(err) {
-        console.log(err);
-        res.json(err);
-        // res.status(422).json(err.errors[0].message);
-      });
-  });
+	app.post("/api/reservations", function(req, res) {
+		db.ReservationListing.create({
+			date: req.body.date,
+			time: req.body.time,
+			groupcount: req.body.groupcount,
+			creator: req.body.creator,
+			email: req.body.email
+		})
+			.then(function(results) {
+				res.json(results);
+			})
+			.catch(function(err) {
+				console.log(err);
+				res.json(err);
+				// res.status(422).json(err.errors[0].message);
+			});
+	});
   
 	app.get("/api/items", function(req, res) {
 

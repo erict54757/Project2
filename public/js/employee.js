@@ -15,8 +15,8 @@ $("document").ready(function() {
 
 	// Onclick function
 
-    $(document).on('click', '.prod', function () {
-        console.log("hello");
+	$(document).on("click", ".prod", function () {
+		console.log("hello");
 		var newItem = $("<tr>");
 		var nuItName = $("<td>" + this.name + "</td>");
 		var nuItPrice = $("<td>" + this.price + "</td>");
