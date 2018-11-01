@@ -20,9 +20,9 @@ module.exports = function(app) {
 			if (user.isAdmin === true) {
 				return res.json("/admin");
 			} else if (user.isEmployee === true) {
-				return res.json("/employee");
+				return res.json("/admin");
 			} else {
-				return res.json("/customers");
+				return res.json("/admin");
 			}
 		});
 	});
