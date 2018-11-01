@@ -19,26 +19,38 @@
 </head>
 
 <body>
-    <header>
+    <div class="container-fluid">
+        <div class="row">
+    <header bg-light>
         <h1>Omni</h1>
     </header>
-    <div class="menu mb-5">
+    </div>
+    <div class="row">
+    <div class="menu rounded">
         <button class= "btn-lg"><a href="/logout">logout</a></button>
         <button class= "btn-lg" type="button" id="customerShow">Customers</button>
         <button class= "btn-lg" type="button" id="employeeShow">Employees</button>
         <button class= "btn-lg" type="button" id="inventoryShow">Inventory</button>
+    
     </div>
-    <div id="innerCont">
-        <div class="col-3 ">
-            records list
-            <div class="records">
+</div>
+</div>
+<div class="container-fluid">
+    <div class="row" style="min-height: 860px:">
+
+ 
+    
+        <div  class="col-4 text-center rounded p-2 " id="innerCont">
+            <div class="col-12"> records list</div>
+           
+            <div class="col-10 records bg-light rounded">
 
             </div>
         </div>
-        <div class="col-8 col-s-8" id="form">
+        <div class="col-8 bg-light p-3 rounded mt-5" style="min-height: 860px:" id="form">
 
-            <div class="container-fluid">
-                    >
+           
+                    
             <!-- customer -->
           
              <div class="fcont" id=customerForm>
@@ -63,9 +75,9 @@
                         <input type="email"  value="" name="email" class="email">
                         <br>
                     </div>
-                    <div class="fdiv col-11">
+                    <div class="fdiv col-12">
                         Comments:<br>
-                        <textarea name="message" name="comments" value="textarea" rows="12" cols="150"></textarea>
+                        <textarea  class="col-6" name="message" name="comments" value="textarea" ></textarea>
                         <br>
                         <button class="submitEmployee" type="submit" value="Submit">Submit</button>
                     </div>
@@ -80,7 +92,7 @@
                 <div class="col-11 col-s-11"> <span class="idNum"></span></div>
                 <form class="sign-up" action="/api/addEmployee" method="POST">
 
-                    <div class="fdiv col-5">
+                    <div class="12">
                         User Name:<br>
                         <input type="text" name="uName" value="" class="email-input"><br>
                         Password:<br>
@@ -98,9 +110,9 @@
                         <input type="email"  value="" name="email" class="email">
                         <br>
                     </div>
-                    <div class="fdiv col-11">
+                    <div class="fdiv col-5">
                         Comments:<br>
-                        <textarea name="message" name="comments" value="textarea" rows="12" cols="150"></textarea>
+                        <textarea  class="col-6" name="message" name="comments" value="textarea" ></textarea>
                         <br>
                         <button class="submitEmployee" type="submit" value="Submit">Submit</button>
                     </div>
@@ -123,19 +135,22 @@
                         <label for="price">Price</label><br>
                         <input class="form-control"name="price" value=""  class="price" placeholder="$">
                     </div>
-                    <div class="form-group col-11 col-s-11">
+                    <div class="form-group col-5 col-s-11">
                         <label for="description">Description</label><br>
-                        <textarea name="description" name="description" value="textarea"class="description" cols="150" rows="12"></textarea>
+                        <textarea  class="col-6" name="message" name="comments" value="textarea" ></textarea>
                     </div>
 
                     <button id="create" type="submit" id="subminInventory" class="btn btn-primary">Create</button>
                 </form>
 
-            </div> 
+            
 
 
         </div>
     </div>
+
+
+</div>
     <footer class="fixed-bottom">
         copyright
     </footer>
